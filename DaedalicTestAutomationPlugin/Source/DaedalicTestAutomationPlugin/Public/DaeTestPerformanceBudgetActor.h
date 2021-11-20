@@ -32,43 +32,43 @@ public:
 
 private:
     /** Targets points to fly through, in order. */
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(EditInstanceOnly, Category="DaeTestPerformanceBudgetActor")
     TArray<ATargetPoint*> FlightPath;
 
     /** Pawn to use for flying through the level. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     TSubclassOf<APawn> PawnClass;
 
     /** How long to wait before starting to fly, in seconds. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float InitialDelay;
 
     /** How fast to fly, in cm/s. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float FlightSpeed;
 
     /** Radius around flight path points to consider the point as reached, in cm. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float AcceptanceRadius;
 
     /** How long to wait before starting to measure again after a budget violation, in seconds. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float BudgetViolationTimeout;
 
     /** How long game thread is allowed to take for a single frame, in ms. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float GameThreadBudget;
 
     /** How long draw is allowed to take for a single frame, in ms. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float RenderThreadBudget;
 
     /** How long GPU is allowed to take for a single frame, in ms. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     float GPUBudget;
 
     /** Whether performance budget violations should cause a failure item in default test reports. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestPerformanceBudgetActor")
     bool bIncludeInDefaultTestReport;
 
     bool bIsRunning;

@@ -33,7 +33,7 @@ public:
     void RunTest(UObject* TestParameter);
 
     /** Finishes execution of this test, automatically following up with the Assert step. */
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="DaeTestActor")
     void FinishAct();
 
     /** Gets how long this test is allowed to run before it fails automatically, in seconds. */
@@ -43,7 +43,7 @@ public:
     TArray<TSoftObjectPtr<UObject>> GetParameters() const;
 
     /** Gets the parameter for the current test run. */
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintPure, Category = "DaeTestActor")
     UObject* GetCurrentParameter() const;
 
     /** Collects additional result data for this test after it has finished. */
@@ -100,20 +100,20 @@ public:
 
 protected:
     /** How long this test is allowed to run before it fails automatically, in seconds. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestActor")
     float TimeoutInSeconds;
 
 private:
     /** Reason for skipping this test. Test will be skipped if this is not empty. Useful for temporarily disabling unstable tests. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestActor")
     FString SkipReason;
 
     /** Parameterizes this test, running it multiple times, once per specified parameter.  */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestActor")
     TArray<TSoftObjectPtr<UObject>> Parameters;
 
     /** Additional providers for appending parameters for this test. Applied exactly once before the first test run. */
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "DaeTestActor")
     TArray<ADaeTestParameterProviderActor*> ParameterProviders;
 
     /** Parameter for the current test run. */

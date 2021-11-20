@@ -18,19 +18,19 @@ public:
     FString TestMapPath;
 
     /** Paths to look for test maps in, relative to the Content root of your project (e.g. Maps/AutomatedTests). */
-    UPROPERTY(config, EditAnywhere)
+    UPROPERTY(config, EditAnywhere, Category = "DaeTestAutomationPluginSettings")
     TArray<FString> TestMapFolders;
 
     /** Names of additional maps to test. */
-    UPROPERTY(config, EditAnywhere)
+    UPROPERTY(config, EditAnywhere, Category = "DaeTestAutomationPluginSettings")
     TArray<FName> AdditionalTestMaps;
 
     /** Names of maps to ignore when found in test map folders. */
-    UPROPERTY(config, EditAnywhere)
+    UPROPERTY(config, EditAnywhere, Category = "DaeTestAutomationPluginSettings")
     TArray<FName> IgnoredMaps;
 
     /** Console variables to set before running batches of tests (e.g. Automation Window, Gauntlet). */
-    UPROPERTY(config, EditAnywhere)
+    UPROPERTY(config, EditAnywhere, Category = "DaeTestAutomationPluginSettings")
     TMap<FString, FString> ConsoleVariables;
 
     UDaeTestAutomationPluginSettings();

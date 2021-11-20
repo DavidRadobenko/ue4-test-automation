@@ -82,11 +82,11 @@ public:
 
 private:
     /** Tests to run in this level. */
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(EditInstanceOnly, Category = "DaeTestSuiteActor")
     TArray<ADaeTestActor*> Tests;
 
     /** Whether to automatically run this test suite on BeginPlay in Play In Editor. */
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(EditInstanceOnly, Category = "DaeTestSuiteActor")
     bool bRunInPIE;
 
     /** Index of the current test. */

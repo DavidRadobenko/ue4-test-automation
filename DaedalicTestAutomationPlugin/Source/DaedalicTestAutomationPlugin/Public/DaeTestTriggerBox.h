@@ -14,7 +14,7 @@ public:
     virtual void BeginPlay() override;
 
     /** Whether this trigger box has been triggered at least once. */
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintPure, Category="DaeTestTriggerBox")
     bool WasTriggered() const;
 
 private:
